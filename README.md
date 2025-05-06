@@ -5,3 +5,4 @@ This is not offical note from miscrosoft to block all the Telemetry servcies tha
 
 ![image](https://github.com/user-attachments/assets/6acaf320-5700-45be-8ab1-d20203f4e8db)
 
+![image](https://github.com/user-attachments/assets/9cea8e44-2fc2-4ba9-aeca-b5bfcb7f8797)
