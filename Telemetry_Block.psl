@@ -1,0 +1,23 @@
+# Define telemetry IPs (can be updated as needed)
+$telemetryIPs = @(
+    "13.107.4.50",
+    "13.107.5.88",
+    "40.76.0.0/14",
+    "40.90.0.0/15",
+    "40.112.0.0/13",
+    "40.96.0.0/12"
+)
+
+# Create firewall rule for each IP
+foreach ($ip in $telemetryIPs) {
+    New-NetFirewallRule `
+        -DisplayName "Block svchost to $ip" `
+        -Direction Outbound `
+        -Action Block `
+        -Program "%SystemRoot%\System32\svchost.exe" `
+        -RemoteAddress $ip `
+        -Profile Any `
+        -Protocol Any `
+        -Enabled True `
+        -Description "Blocks svchost.exe outbound to Microsoft telemetry IP $ip"
+}
